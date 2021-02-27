@@ -12,6 +12,6 @@ class BookExport implements FromCollection
     */
     public function collection()
     {
-        return Book::all();
+        return Book::all('Name', 'price');
     }
 }
