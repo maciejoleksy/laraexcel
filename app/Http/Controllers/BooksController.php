@@ -11,8 +11,6 @@ class BooksController extends Controller
 {
     public function export() 
     {
-        // $show = Book::all('Name', 'price');
-        // dd($show);
         return Excel::download(new BookExport, 'books.xlsx');
     }
 }

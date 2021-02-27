@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\AuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/export', [BooksController::class, 'export']);
+Route::get('/import', [AuthorController::class, 'import']);
+Route::post('/import', [AuthorController::class, 'importFile'])->name('author.import');
