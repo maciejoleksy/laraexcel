@@ -8,5 +8,6 @@
 </head>
 <body>
     <a href="/export">Export file</a>
+    <a href="/import">Import file</a>
 </body>
 </html>

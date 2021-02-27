@@ -16,9 +16,15 @@ use App\Http\Controllers\AuthorController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
+// export
 Route::get('/export', [BooksController::class, 'export']);
-Route::get('/import', [AuthorController::class, 'import']);
-Route::post('/import', [AuthorController::class, 'importFile'])->name('author.import');
+
+// import
+Route::get('/import', function() {
+    return view('import');
+});
+
+Route::post('/import', [AuthorController::class, 'import'])->name('author.import');

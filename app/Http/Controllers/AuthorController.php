@@ -9,12 +9,7 @@ use App\Imports\AuthorImport;
 
 class AuthorController extends Controller
 {
-    
-    public function import(){
-        return view('import');
-    }
-
-    public function importFile(Request $request) {
+    public function import(Request $request) {
         Excel::import(new AuthorImport, $request->file);
     }
 }
