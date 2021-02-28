@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\AuthorController;
+use App\Exports\AuthorExport;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,6 @@ Route::get('/import', function() {
 });
 
 Route::post('/import', [AuthorController::class, 'import'])->name('author.import');
+
+// export author_id
+Route::get('/author/import/{author_id}', [AuthorController::class, 'exportAuthor']);
