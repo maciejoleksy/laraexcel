@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
-use App\Models\Book;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Imports\AuthorImport;

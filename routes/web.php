@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\AuthorController;
-use App\Exports\AuthorExport;
 
 /*
 |--------------------------------------------------------------------------
