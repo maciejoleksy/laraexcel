@@ -20,15 +20,18 @@ Route::get('/', function () {
     return view('index');
 });
 
-// export
+// books
+Route::prefix('books')->group(function(){
+
 Route::get('/export', [BooksController::class, 'export']);
 
-// import
-Route::get('/import', function() {
-    return view('import');
 });
 
-Route::post('/import', [AuthorController::class, 'import'])->name('author.import');
+// authors
+Route::prefix('authors')->group(function(){
 
-// export author_id
-Route::get('/author/import/{author_id}', [AuthorController::class, 'exportAuthor']);
+    Route::get('/import', [AuthorController::class, 'importView']);
+    Route::post('/import', [AuthorController::class, 'importFile'])->name('author.import');
+    Route::get('/export/{author_id}', [AuthorController::class, 'exportAuthor']);
+
+});

@@ -7,7 +7,7 @@
     <title>Export</title>
 </head>
 <body>
-    <a href="/export">Export file</a>
-    <a href="/import">Import file</a>
+    <a href="/books/export">Export file</a>
+    <a href="/authors/import">Import file</a>
 </body>
 </html>
