@@ -4,9 +4,13 @@ namespace App\Imports;
 
 use App\Models\Author;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\SkipsOnError;
+use Maatwebsite\Excel\Concerns\SkipsErrors;
+use Maatwebsite\Excel\Concerns\Importable;
 
-class AuthorImport implements ToModel
+class AuthorImport implements ToModel, SkipsOnError
 {
+    use Importable, SkipsErrors;
     /**
     * @param array $row
     *

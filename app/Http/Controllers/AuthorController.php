@@ -10,12 +10,19 @@ use App\Exports\AuthorExport;
 
 class AuthorController extends Controller
 {
-    public function importView() {
+    public function importView() 
+    {
         return view('import');
     }
 
-    public function importFile(Request $request) {
-        Excel::import(new AuthorImport, $request->file);
+    public function importFile(Request $request) 
+    {
+        // Excel::import(new AuthorImport, $request->file);
+        $import = new AuthorImport();
+        $import->import($request->file);
+
+        dd($import->errors());
+        // return $import->errors('name');
     }
 
     public function exportAuthor(Request $request) {
