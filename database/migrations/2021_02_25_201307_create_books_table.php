@@ -13,14 +13,21 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
+        // Schema::create('books', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('Name');
+        //     $table->string('Category');
+        //     $table->string('Writer');
+        //     $table->integer('pages');
+        //     $table->boolean('hard_cover');
+        //     $table->float('price', 8,2);
+        // });
         Schema::create('books', function (Blueprint $table) {
-            $table->id();
-            $table->string('Name');
-            $table->string('Category');
-            $table->string('Writer');
-            $table->integer('pages');
-            $table->boolean('hard_cover');
-            $table->float('price', 8,2);
+            $table->increments('id');
+            $table->integer('number');
+            $table->string('brutto');
+            $table->integer('file');
+            $table->timestamps();
         });
     }
 
