@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BooksController;
-use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,21 +15,10 @@ use App\Http\Controllers\AuthorController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
-// books
-Route::prefix('books')->group(function(){
-
-Route::get('/export', [BooksController::class, 'export']);
-
-});
-
-// authors
-Route::prefix('authors')->group(function(){
-
-    Route::get('/import', [AuthorController::class, 'importView']);
-    Route::post('/import', [AuthorController::class, 'importFile'])->name('author.import');
-    Route::get('/export/{author_id}', [AuthorController::class, 'exportAuthor']);
-
+Route::prefix('import')->name('import.')->group(function(){
+    Route::get('/', [InvoiceController::class, 'index'])->name('index');
+    Route::post('store', [InvoiceController::class, 'store'])->name('store');
 });
